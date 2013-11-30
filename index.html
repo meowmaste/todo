@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>To-Dos!</title>
+</head>
+<body>
+	
+	<h3>To-Do List</h3>
+		<form action="#" name="to_do">
+			<label for="input">Add anything you'd like to get done!</label></br>
+			<textarea id="input" rows ="10" cols="30"></textarea><br>
+			<button id="button" type="button">Add to List</button>
+		</form>
+		<p>Click away anything you've accomplished!</p>
+		<ul class="list">
+		</ul>
+
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#button').click(function() {
+				var item = $('#input') 
+				$('ul').prepend("<li>"+item.val()+"</li>");
+				item.val("");
+			});
+			$('ul').on('click', 'li', function() {
+				$(this).remove();
+			});
+		});
+
+
+
+	
+	</script>
+
+</body>
